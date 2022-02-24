@@ -1,5 +1,6 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import './App.css';
+import './index.css';
 import React from "react";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
@@ -7,9 +8,9 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import NotFound from "./Components/NotFound";
-import AddUsers from "./Components/AddUsers";
-import Users from "./Components/Users";
-import EditUsers from "./Components/EditUsers";
+import AddUsers from "./Components/Pages/AddUsers";
+import Users from "./Components/Pages/Users";
+import EditUsers from "./Components/Pages/EditUsers";
 
 function App() {
   return (

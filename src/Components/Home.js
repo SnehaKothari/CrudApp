@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { getUsers,deleteUser } from "../Service/api";
+import { getUsers,deleteUser } from "./Service/api";
 
 const Home = () => {
     const [users, setUser] = useState([]);

@@ -24,7 +24,6 @@ code {
 }
 
 .list-group {
-  display: flex;
   display: inline-flex;
   flex-direction: column;
   padding-left: 0;
