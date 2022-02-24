@@ -5,7 +5,7 @@ import React from "react";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
+import Home from "./Components/Pages/Home";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import NotFound from "./Components/NotFound";
 import AddUsers from "./Components/Pages/AddUsers";
