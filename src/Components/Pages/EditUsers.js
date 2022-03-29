@@ -2,30 +2,44 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Edit,userUpdate } from "../Service/api";
+import { Toast } from "bootstrap";
 
-const EditUsers=()=>{
+const EditUsers=(props)=>{
     const history = useNavigate();
-    const { id } = useParams();
+    const { Id } = useParams();
     const [user, setUser] = useState({
       
-        name: "",
-      username: "",
-      email: "",
+        Name: "",
+      Username: "",
+      Email: "",
       
     });
-  
-    const {name, username, email } = user;
+  //const url=`https://localhost:44397/api/User/api/getkeys/${Id}`;
+    const {Name, Username, Email } = user;
     const onInputChange = e => {
       setUser({ ...user, [e.target.name]: e.target.value });
     };
+
+    /*
     const loadUserdata = async () => {
-        const response = await Edit(id);
+        const response = await Edit(Id);
         setUser(response.data)
-      }
-      useEffect(() =>loadUserdata(),[]);
-    
+  }
+     useEffect(() =>loadUserdata(),[]);
+    */
+  useEffect(()=>{
+    if(Id){
+      loadUserdata(Id)
+    }
+  },[Id]);
+  const loadUserdata=async(Id)=>{
+    const response=await axios.get(`https://localhost:44397/api/User/api/getkeys/${Id}`);
+    if(response.status===200){
+      setUser({...response.data[0]});
+    }
+  }
       const addDetail = async () => {
-        await userUpdate(id, user);
+        await userUpdate(Id,Name,Username,Email);
         history('/')
       }
   
@@ -41,8 +55,8 @@ const EditUsers=()=>{
                 type="text"
                 className="form-control form-control-lg"
                 placeholder="Enter Your Name"
-                name="name"
-                value={name}
+                name="Name"
+                value={Name}
                 onChange={e => onInputChange(e)}
               />
             </div>
@@ -51,8 +65,8 @@ const EditUsers=()=>{
                 type="text"
                 className="form-control form-control-lg"
                 placeholder="Enter Your Username"
-                name="username"
-                value={username}
+                name="Username"
+                value={Username}
                 onChange={e => onInputChange(e)}
               />
             </div>
@@ -61,18 +75,18 @@ const EditUsers=()=>{
                 type="email"
                 className="form-control form-control-lg"
                 placeholder="Enter Your E-mail Address"
-                name="email"
-                value={email}
+                name="Email"
+                value={Email}
                 onChange={e => onInputChange(e)}
               />
             </div>
             
-          <Link to={'./'}><button className="btn btn-warning btn-block margin:3" onClick={()=>{addDetail(user.id)}}>Update User</button></Link>
+          <Link to={'/'}><button className="btn btn-warning btn-block margin:3" onClick={()=>{addDetail(user.Id,user.Name,user.Username,user.Email)}}>Update User</button></Link>
           
           </form>
         </div>
       </div>
     )
-}
+    }
 
 export default EditUsers;

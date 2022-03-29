@@ -13,6 +13,7 @@ import Users from "./Components/Pages/Users";
 import EditUsers from "./Components/Pages/EditUsers";
 
 function App() {
+ 
   return (
     <BrowserRouter>
     
@@ -23,9 +24,9 @@ function App() {
     <Route exact path='/about' element={<About/>}/>
     <Route exact path='/contact' element={<Contact/>}/>
     <Route exact path='/addUsers/' element={<AddUsers/>}/>
-    <Route exact path='/users/:id' element={<Users/>}/>
-    <Route exact path="/editusers/:id" element={<EditUsers/>}/>
-    <Route exact path="/users/:id/editusers/:id" element={<EditUsers/>}/>
+    <Route exact path='/users/:Id' element={<Users/>}/>
+    <Route exact path="/editusers/:Id" element={<EditUsers/>}/>
+    <Route exact path="/users/:Id/editusers/:Id" element={<EditUsers/>}/>
     </Routes>
     
     </div>

@@ -1,34 +1,34 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Jahnvi",
-      "username": "Maheshwari",
-      "email": "jahnvi@melissa.com"
+      "Id": 1,
+      "Name": "Jahnvi",
+      "Username": "Maheshwari",
+      "Email": "jahnvi@melissa.com"
     },
     {
-      "id": 2,
-      "name": "John",
-      "username": "Th",
-      "email": "Shanna@melissa.com"
+      "Id": 2,
+      "Name": "John",
+      "Username": "Th",
+      "Email": "Shanna@melissa.com"
     },
     {
-      "id": 3,
-      "name": "Clementine Bauch",
-      "username": "Samantha",
-      "email": "Nathan@yesenia.net"
+      "Id": 3,
+      "Name": "Clementine Bauch",
+      "Username": "Samantha",
+      "Email": "Nathan@yesenia.net"
     },
     {
-      "id": 4,
-      "name": "Patricia Lebsack",
-      "username": "Karianne",
-      "email": "Julianne.OConner@kory.org"
+      "Id": 4,
+      "Name": "Patricia Lebsack",
+      "Username": "Karianne",
+      "Email": "Julianne.OConner@kory.org"
     },
     {
-      "name": "Sneha Kothari",
-      "username": "Sneha2612",
-      "email": "kothari.sneha05@gmail.com",
-      "id": 5
+      "Name": "Abhishek",
+      "Username": "Antonette",
+      "Email": "Shanna@melissa.tv",
+      "Id": 5
     }
   ]
 }

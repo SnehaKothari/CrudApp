@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { Adduser,userUpdate } from '../Service/api'
 import {Link,useNavigate,useParams} from 'react-router-dom'
+import axios from 'axios';
 
-const AddUsers=()=>{
+const AddUsers=(props)=>{
     const history = useNavigate();
-    const { id } = useParams();
+    const { Id } = useParams();
     const [user, setUser] = useState({
       
-    name: "",
-    username: "",
-    email: "",
+    Name: "",
+    Username: "",
+    Email: "",
       
     });
   
-    const {name, username, email } = user;
+   //const url='https://localhost:44397/api/insertkeys';
+    const {Name, Username, Email } = user;
 
     const onInputChange = e => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -23,10 +25,14 @@ const AddUsers=()=>{
   await Adduser(user);
    history('/')
   }
-  
 
+/*const onSubmit=(e)=>{
+  e.preventDefault();
+  const data={Name:user.Name,Username:user.Username,Email:user.Email} ;
+  axios.post(url,data).then((result)=>{props.history('/')});
+
+}*/
   
- 
 
   return (
   <div className="container">
@@ -39,8 +45,8 @@ const AddUsers=()=>{
             <input type="text"
             className="form-control form-control-lg"
             placeholder="Enter Your Name"
-            name="name"
-            value={name}
+            name="Name"
+            value={Name}
             onChange={e => onInputChange(e)}
           />
         </div>
@@ -49,8 +55,8 @@ const AddUsers=()=>{
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter Your Username"
-              name="username"
-              value={username}
+              name="Username"
+              value={Username}
               onChange={e => onInputChange(e)}
             />
         </div>
@@ -59,14 +65,14 @@ const AddUsers=()=>{
               type="email"
               className="form-control form-control-lg"
               placeholder="Enter Your E-mail Address"
-              name="email"
-              value={email}
+              name="Email"
+              value={Email}
               onChange={e => onInputChange(e)}
             />
         </div>
     
     
-<Link to="./"><button className='my-2 btn btn-primary' onClick={()=>onSubmit()}>Add User</button> </Link>
+<Link to={'/'}><button className='my-2 btn btn-primary' onClick={()=>onSubmit()}>Add User</button> </Link>
         
     </form>
     </div>
